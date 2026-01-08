@@ -1,0 +1,7 @@
+{
+    "name": "auth",
+    "projectType": "library",
+    "sourceRoot": "libs/auth/src",
+    "tags": ["type:backend", "scope:auth"]
+  }
+  

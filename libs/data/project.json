@@ -1,0 +1,7 @@
+{
+    "name": "data",
+    "projectType": "library",
+    "sourceRoot": "libs/data/src",
+    "tags": ["type:shared"]
+  }
+  
