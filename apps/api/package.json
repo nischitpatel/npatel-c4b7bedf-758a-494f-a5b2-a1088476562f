@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "nx": {
+    "name": "api",
     "targets": {
       "build": {
         "executor": "nx:run-commands",
@@ -63,15 +64,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@org/api:build",
+          "buildTarget": "api:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@org/api:build:development"
+            "buildTarget": "api:build:development"
           },
           "production": {
-            "buildTarget": "@org/api:build:production"
+            "buildTarget": "api:build:production"
           }
         }
       },

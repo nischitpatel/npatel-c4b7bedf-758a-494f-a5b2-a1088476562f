@@ -2,12 +2,25 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2021",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": false,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "ts-node": {
+    "esm": false,
+    "transpileOnly": true,
+    "experimentalResolver": true
+  },
   "references": [
     {
       "path": "./apps/api-e2e"
-    },
-    {
-      "path": "./apps/api"
     },
     {
       "path": "./libs/auth"
@@ -17,6 +30,9 @@
     },
     {
       "path": "./apps/dashboard"
+    },
+    {
+      "path": "./apps/api"
     }
   ]
 }
