@@ -10,4 +10,6 @@ export * from './guards/jwt-auth.guard';
 export * from './guards/rbac.guard';
 
 export * from './services/rbac.service';
+export * from './services/audit.service';
+
 export * from './interfaces/auth-user.interface';

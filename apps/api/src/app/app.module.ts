@@ -9,9 +9,10 @@ import { AuthModule } from './auth/auth.module';
 // import { RbacGuard } from '../../../../libs/auth/src/guards/rbac.guard';
 import { MeModule } from './me/me.module';
 import { TasksModule } from './tasks/tasks.module';
+import { AuditLogModule } from './audit-log/audit-log.module';
 
 @Module({
-  imports: [AuthModule, MeModule, TasksModule],
+  imports: [AuthModule, MeModule, TasksModule, AuditLogModule],
   controllers: [AppController], //, AuthController
   providers: [AppService,
     // {
