@@ -4,6 +4,7 @@ export * from './enums/permission.enum';
 
 export * from './decorators/roles.decorator';
 export * from './decorators/permissions.decorator';
+export * from './decorators/current-user.decorator';
 
 export * from './guards/jwt-auth.guard';
 export * from './guards/rbac.guard';
