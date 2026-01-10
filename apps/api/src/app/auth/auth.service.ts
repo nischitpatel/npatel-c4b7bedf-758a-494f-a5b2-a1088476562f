@@ -1,9 +1,6 @@
 import { Injectable, UnauthorizedException, Inject } from '@nestjs/common';
-// import { UsersService, User } from './users.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-// import { UsersService, User } from './users.service';
-
 import { Role } from '@org/data';
 
 export interface User {
