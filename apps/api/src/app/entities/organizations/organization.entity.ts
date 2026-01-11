@@ -4,12 +4,12 @@ import { User } from '../users/user.entity';
 @Entity()
 export class Organization {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ unique: true })
-  name: string;
+  name!: string;
 
   // One organization has many users
   @OneToMany(() => User, (user) => user.organization)
-  users: User[];
+  users!: User[];
 }

@@ -1,4 +1,5 @@
-// import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+// import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+// import { Organization } from '../organizations/organization.entity';
 
 // @Entity('users')
 // export class User {
@@ -10,10 +11,20 @@
 
 //   @Column()
 //   name: string;
-// }
 
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+//   // Each user belongs to one organization
+//   @ManyToOne(() => Organization, (org) => org.users)
+//   organization: Organization;
+// }
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  CreateDateColumn,
+} from 'typeorm';
 import { Organization } from '../organizations/organization.entity';
+import { Role } from '@org/data';
 
 @Entity('users')
 export class User {
@@ -24,9 +35,18 @@ export class User {
   email: string;
 
   @Column()
-  name: string;
+  password: string; // hashed password
 
-  // Each user belongs to one organization
-  @ManyToOne(() => Organization, (org) => org.users)
+  @Column({
+    type: 'simple-enum',
+    enum: Role,
+    default: Role.VIEWER,
+  })
+  role: Role;
+
+  @ManyToOne(() => Organization, (org) => org.users, { nullable: false })
   organization: Organization;
+
+  @CreateDateColumn()
+  createdAt: Date;
 }

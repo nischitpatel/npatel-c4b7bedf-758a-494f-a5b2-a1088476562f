@@ -11,12 +11,13 @@ import { typeOrmConfig } from './database/typeorm.config';
 import { OrganizationsModule } from './entities/organizations/organizations.module';
 import { User } from './entities/users/user.entity';
 import { Organization } from './entities/organizations/organization.entity';
+import { Task } from './entities/tasks/task.entity';
 
 @Module({
   imports: [AuthModule, MeModule, TasksModule, AuditLogModule, 
     TypeOrmModule.forRoot({
       ...typeOrmConfig,
-      entities: [User, Organization],
+      entities: [User, Organization, Task],
     }),
     UsersModule,
     OrganizationsModule

@@ -1,8 +1,22 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
+  // "include": [],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "strict": true
+  },
+  "include": ["src/**/*.ts", "scripts/**/*.ts"],
+  "exclude": ["node_modules", "dist"],
   "references": [
+    {
+      "path": "../../libs/auth"
+    },
+    {
+      "path": "../../libs/data"
+    },
     {
       "path": "./tsconfig.app.json"
     },
